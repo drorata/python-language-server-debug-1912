@@ -1,0 +1,36 @@
+name: test-lang-server
+channels:
+  - conda-forge
+  - r
+dependencies:
+  - python=3.7
+  - pytest=5.0.1
+  - pip
+  - click=7.0
+  - dask=2.1.0
+  - numpy=1.16.4
+  - pandas=0.25.1
+  - pydot=1.4.1
+  - s3fs=0.3.3
+  # This version of pyspark DOES NOT match the one currently used on EMR
+  # It is here nevertheless, otherwise unit tests break
+  # See: https://stackoverflow.com/q/57710771/671013
+  - pyspark=2.4.2
+  - r-base
+  - r-essentials
+  - r-reticulate
+  - r-plyr
+  - r-jsonlite
+  - r-dplyr
+  - r-psych
+  - r-testthat
+  - r-gridExtra
+  - pyarrow=0.14.0
+  - pip:
+      - dvc[s3]==0.66.6
+      - graphviz==0.11.1
+      - freezegun==0.3.12
+      - holoviews~=1.12
+      - findspark
+      - streamlit~=0.55
+      - -e .
